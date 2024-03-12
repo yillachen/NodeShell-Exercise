@@ -10,7 +10,7 @@ const returnHead = () => {
 
 const returnTail = () => {
   fs.readdir('./', 'utf8', (error, data) => {
-    if (error) console.log('Error returning head: ', error);
+    if (error) console.log('Error returning tail: ', error);
     else return console.log(data.slice('')[data.length-1])
   })
 }
