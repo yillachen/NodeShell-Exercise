@@ -22,6 +22,9 @@ const bash = data => { // the main fn that toggles between multiple methods
     case 'cat':
       require('./cat')(arg, prompt);
       break;
+    case 'curl':
+      require('./curl')(arg, prompt);
+      break;
     default:
       prompt('Command not found.')
   }
