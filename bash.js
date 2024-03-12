@@ -4,6 +4,8 @@ In UNIX environments, programs communicate with streams called STDIN, STDOUT, ST
 Node.js gives us access to these streams in the form of process.stdin, process.stdout objects. We're building a stream of communication.
 */
 
+const { returnHead, returnTail } = require('./listingMethods');
+
 const prompt = data => { // helper fn to display data after entering prompt.
   console.log(data); // displays the data
   process.stdout.write('> '); // starts the prompt empty.
@@ -30,6 +32,12 @@ const bash = data => { // the main fn that toggles between multiple methods
       break;
     case 'echo':
       require('./echo')(entry, prompt);
+      break;
+    case 'head':
+      returnHead();
+      break;
+    case 'tail':
+      returnTail();
       break;
     default:
       prompt('Command not found.')
